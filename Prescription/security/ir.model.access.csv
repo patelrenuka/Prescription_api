@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prescriptions_details,prescriptions_details,model_prescriptions_details,base.group_user,1,1,1,1
+access_prescription_templates,prescription_templates,model_prescription_templates,base.group_user,1,1,1,1
+access_clinic_details,clinic_details,model_clinic_details,base.group_user,1,1,1,1
+access_details_medicine,details_medicine,model_details_medicine,base.group_user,1,1,1,1
+access_details_medicine_prescription,details_medicine_prescription,model_details_medicine_prescription,base.group_user,1,1,1,1
+access_api_access_token,access_api_access_token,model_api_access_token,,1,1,1,1

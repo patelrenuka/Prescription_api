@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="prescription_templates_view_tree" model="ir.ui.view">
+            <field name="name">prescription.templates.view.tree</field>
+            <field name="model">prescription.templates</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="prescription_templates_view_form" model="ir.ui.view">
+            <field name="name">prescription.templates.view.form</field>
+            <field name="model">prescription.templates</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <notebook>
+                            <page string="Medications" editable="top">
+                                <field name="medicines_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="prescription_templates_action" model="ir.actions.act_window">
+            <field name="name">Prescriptions Templates</field>
+            <field name="res_model">prescription.templates</field>
+            <field name="view_mode">list,form</field>
+            
+        </record>
+
+        
+        <menuitem id="prescriptions_temp_menu" name="Prescription Templates" action="prescription_templates_action" parent="prescriptions_sub_menu_2" />
+
+    <!-- medicine decoration-success="total == 100" decoration-danger="total &gt; 100" decoration-info="total &lt; 100"-->
+        <record id="medicin_view_tree" model="ir.ui.view">
+            <field name="name">medicin.view.tree</field>
+            <field name="model">details.medicine</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom"  >
+                    <field name="relation_ids" />
+                    <field name="dosage"/>
+                    <field name="frequency" />
+                    <field name="route_of_administration" />
+                    <field name="instruction" />
+                    <!-- <field name="total" /> -->
+                    
+                </tree>
+            </field>
+        </record>
+
+        <!-- <record id="medicin_view_form" model="ir.ui.view">
+            <field name="name">medicin.view.form</field>
+            <field name="model">details.medicine</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="relation_ids" />
+                            <field name="dosage" string="Dosage"/>
+                            <field name="frequency" string="Frequency" />
+                            <field name="route_of_administration" string="Route of Administration"/>
+                            <field name="instruction" string="instruction"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> -->
+
+        <record id="medicin_action" model="ir.actions.act_window">
+            <field name="name">Medicine</field>
+            <field name="res_model">details.medicine</field>
+            <field name="view_mode">list,form</field>
+            
+        </record>
+         <!-- <menuitem id="medicine_temp_menu" name="Medicine" action="medicin_action" parent="prescriptions_sub_menu_2" /> -->
+
+
+    </data>
+    
+
+</odoo>

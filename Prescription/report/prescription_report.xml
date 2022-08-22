@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <template id="prescription_report">
+        <t t-call= "web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Prescription Card</h2>
+            </t>
+        </t>
+    </template> -->
+
+    <template id="prescription_report">
+        <t t-call= "web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout" t-lang="en_US">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h1>Prescription for <span t-field="o.contact_id"/></h1>
+                        <br></br>
+                        <h1>Patient Details</h1>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul style="list-style-type: none;">
+                                    <li><strong>Patient Name:</strong>
+                                    <span t-field="o.contact_id"/></li>
+                                    
+                                    <li><strong>Age:</strong>
+                                    <span t-field="o.age"/></li>
+                                    
+                                    <li><strong>Gender:</strong>
+                                    <span t-field="o.gender"/></li>
+                                    
+                                    <li><strong>Weight: </strong>
+                                    <span t-field="o.weight"/></li>
+                                    
+                                    <li><strong>Email:</strong>
+                                    <span t-field="o.email"/></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-6">
+                                <ul style="list-style-type: none;">
+                                    <li><strong>Consulting Doctor:</strong>
+                                    <span t-field="o.user_id"/></li>
+                                    
+                                    <li><strong>Appointment Date:</strong>
+                                    <span t-field="o.date"/></li>
+                                    
+                                    <li><strong>Valid Till:</strong>
+                                    <span t-field="o.valid_date"/></li>
+                                </ul>    
+                            </div>
+                        </div>
+
+                        
+                        <br></br>
+                        <h1>Symptoms</h1>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul style="list-style-type: none;">
+                                    <li><strong>Symptons:</strong>
+                                    <span t-field="o.symptoms"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                         <h1>Medications</h1>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th style="text-align:left;color:black!important;">Medicine Details</th>
+                                <th style="text-align:left;color:black!important;">Dosage</th>
+                                <th style="text-align:left;color:black!important;">Frequency</th>
+                                <th style="text-align:left;color:black!important;">Route of Administration</th>
+                                <th style="text-align:left;color:black!important;">Instruction</th>
+                            </tr>
+                            <t t-foreach="o.medicine_pres_ids" t-as="a">
+                                <tr>
+                                    <td>
+                                        <span t-field="a.relation_ids" />
+                                    </td>
+                                    <td>
+                                        <span t-field="a.dosage" />
+                                    </td>
+                                    <td>
+                                        <span t-field="a.frequency" />
+                                    </td>
+                                    <td>
+                                        <span t-field="a.route_of_administration" />
+                                    </td>
+                                    <td>
+                                        <span t-field="a.instruction" />
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                        <h1>Diet Plan</h1>
+                        <div>
+                            <t t-raw="o.diet_plan"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+        
+    </template>
+
+</odoo>

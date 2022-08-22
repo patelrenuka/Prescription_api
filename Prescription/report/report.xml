@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="report_prescription_id" model="ir.actions.report">
+        <field name="name">Report</field>
+        <field name="model">prescriptions.details</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">Prescription.prescription_report</field>
+        <field name="report_file">Prescription.prescription_report</field>
+        <field name="binding_model_id" ref="Prescription.model_prescriptions_details"/>
+        <field name="binding_type">report</field>
+
+    </record>
+    </data>
+
+</odoo>
